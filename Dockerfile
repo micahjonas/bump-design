@@ -5,6 +5,9 @@ FROM node:lts-alpine
 COPY --from=heini /usr/local/bin/kubectl /usr/local/bin
 COPY --from=heini /usr/bin/rancher /usr/bin
 
+RUN apk update
 RUN apk add jq
+RUN apk add ca-certificates
+RUN apk add bash
 
 ENTRYPOINT []
